@@ -1,0 +1,634 @@
+\documentclass[twoside]{tfg-urjc}
+
+
+\newcommand{\grado}{Grados en Ciber, IA, II, IC, etc}
+\newcommand{\titulotrabajo}{Manual de uso\\ Plantilla para\\ TFG/ TFM}
+\newcommand{\tipotrabajo}{}
+\newcommand{\curso}{Curso 20XX-20XX}
+\newcommand{\autor}{Joaquín Arias}
+\newcommand{\tutor}{}
+\newcommand{\cotutor}{} %% Completar si procede
+
+\bibliography{bibliografia}
+
+\sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Inicio del documento
+\begin{document}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% FrontMatter
+\cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+
+
+Este documento tiene como objetivo servir de plantilla y manual de uso
+para la redacción de trabajos fin de Grado (TFG) y/o Master (TFM) de
+la Universidad Rey Juan Carlos de Madrid.
+
+La plantilla está compuesta por cuatro archivos:
+\begin{itemize}
+\item \url{tfg-urjc.cls}: plantilla que define la clase a importar por
+  en el documento del TFG/TFM.
+\item \url{xx-Alumno.tex}: archivo con código \LaTeX que servirá de
+  base para crear el documento del TFG/TFM.
+\item \url{bibliografia.bib}:\footnote{Por conveniencia el código de
+    \code|bibliografia.bib| está disponible en Apéndice~\ref{app:bib}}
+  archivo con las referencias bibliográficas que se usan en este
+  manual. Están codificadas usando BibTeX, su uso se explica en el
+  Capítulo~\ref{sec:bib}.
+\item \url{urjc/urjc-logo.jpg}: archivo con el logotipo de la
+  Universidad Rey Juan Carlos. Se usa en la portada de la plantilla y
+  como ejemplo para explicar al inserción de imágenes en el
+  Capítulo~\ref{sec:image}.
+\end{itemize}
+
+El archivo \url{Manual.tex} contiene el código \LaTeX que genera este
+documento y que tiene como finalidad ayudar al alumno a resolver
+algunas dudas iniciales en el uso de \LaTeX.
+
+
+% \chapter*{Agradecimientos}
+% \addcontentsline{toc}{chapter}{Agradecimientos}
+
+% Breves agradecimientos o dedicatoria.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Índices
+{
+  \setlength{\parskip}{1pt}
+
+  % Índice de contenidos
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\contentsname}
+  \tableofcontents
+
+  % Índice de tablas (OPCIONAL)
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\noindent \listtablename}
+  \listoftables
+
+  % Índice de figuras (OPCIONAL)
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\listfigurename}
+  \listoffigures
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MainMatter
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+La creación de documentos con \LaTeX requiere el conocimiento de
+conceptos básicos de programación e implica, como veremos en el
+Capítulo~\ref{cap:tools}, la utilización de un conjunto de
+herramientas, para por ejemplo editar textos, visualizar archivos
+\code{pdf} y/o la gestión de referencias bibliográficas.
+
+\LaTeX es un lenguaje de programación que permite la composición de
+textos, es software libre bajo licencia
+LPPL.\footnote{\url{http://www.latex-project.org/lppl/}.} Fue
+desarrollado por Leslie Lamport en 1984 y consiste en un conjunto de
+macros de \TeX, un lenguaje de composición tipográfica creado por
+Donald Knuth (\LaTeX y \TeX se codifican resp. con las palabras claves
+\code{\LaTeX} y \code{\TeX}). Una de las principales ventajas de este
+lenguaje de programación es su versatilidad a la hora de representar
+expresiones matemáticas.\footnote{Para más información visitar
+  \url{https://manualdelatex.com/tutoriales/ecuaciones}.}
+
+En relación al objetivo principal de esta plantilla, la realización de
+la memoria de un Trabajo Fin de Grado y/o Master en la Universidad Rey
+Juan Carlos, recomiendo consultar la normativa vigente en cada momento
+y prestando especial atención a las características especiales del
+grado y/o master concreto:
+
+\begin{itemize}
+\item Para TFG consultar
+  \url{https://bit.ly/3fZf4Lb}.
+\item Para TFM consultar
+  \url{https://bit.ly/3i2fTpn}.
+\end{itemize}
+
+Es importante recordar que este manual pretende servir de guía para la
+redacción de una memoria en \LaTeX utilizando la plantilla como ayuda,
+para profundizar en los distintos aspectos que trataremos en este
+manual existen múltiples recursos como por ejemplo el
+\emph{Comprehensive TEX Archive Network} (CTAN) accesible a través de
+\url{https://ctan.org/starter} y que cuenta con varios manuales
+(alguno en español) y con multitud de paquetes para mejorar la calidad
+de los documentos generados con \LaTeX.
+
+\section{Estructura del Manual}
+\label{sec:man}
+
+Explicar que hay en cada capítulo...
+
+
+\chapter{Herramientas para compilar un documento escrito en \LaTeX}
+\label{cap:tools}
+
+\section{Plataforma online: Overleaf}
+
+\section{IDE para Windows/Mac/Linux: TeXstudio}
+
+\section{Editor de texto plano (p.ej., Emacs) + AUC \TeX}
+
+
+
+\chapter{Pequeño Manual de \LaTeX}
+
+\section{Organización}
+
+\subsection{Capítulos, Secciones y otros}
+
+\subsection{Referencias a elementos dentro del documento}
+
+\section{Formato de texto}
+
+\subsection{Negrita, Cursiva y Enlaces}
+
+\subsection{Tamaño de Letra y Control Espacios}
+
+\subsection{Listas y enumeraciones}
+
+\section{Incluir elementos visuales}
+
+\subsection{Imágenes}
+\label{sec:image}
+
+\subsection{Código}
+
+\subsubsection{Código en Python}
+
+\begin{lstlisting}[style=Python]
+# A continuación presentamos una implementación de factorial
+# que guarda los valores calculados en caché.
+class Factorial:
+
+    def __init__(self):
+        self.cache = {}
+
+    def fact(self, number):
+        if number == 0:
+            return 1
+        else:
+            return number * self.fact(number-1)
+
+    def __call__(self, number):
+        if number in self.cache:
+            return self.cache[number]
+        else:
+            result = self.fact(number)
+            self.cache[number] = result
+            return result
+
+factorial = Factorial()
+print(factorial(200))
+print(factorial(2))
+print(factorial(200))
+print(factorial.cache)
+\end{lstlisting}
+
+
+\subsubsection{Código en Unity}
+
+\begin{lstlisting}[style=Unity]
+/* El contenido inicial de un archivo de código en Unity
+   será algo así:*/
+using UnityEngine;
+using System.Collections;
+
+public class MainPlayer : MonoBehaviour {
+    // Use this for initialization
+    void Start () {
+    }
+  
+    // Update is called once per fríame
+    void Update () {
+    }
+}
+\end{lstlisting}
+
+
+\subsubsection{Código Genérico}
+
+\begin{lstlisting}
+/* The code below will print the words Hello World
+to the screen, and it is amazing */
+Console.WriteLine("Hello World!"); 
+/* def sum_list_limits_1(a, lower, upper): */
+    if lower > upper:  % comment in Prolog
+        return 0  # comment in Python 
+    else:  // inline comment
+        return a[upper] $+ \cup$ sum_list_limits_1(a, lower, upper - 1)
+\end{lstlisting}
+
+
+\subsection{Algoritmos}
+
+\subsection{Figuras}
+
+\subsection{Tablas} 
+
+
+\subsubsection{Tablas largas y anchas}
+
+
+\begin{landscape}
+    \begin{longtable}{l  l  *{15}{c} }
+      \caption[Análisis de la presencia de trastornos mentales en los Videojuegos]{Análisis de la presencia de trastornos mentales en los Videojuegos\\`-' no aparece; `a' aparece; `b' centrado.}
+      \label{tab:larga}
+      \endfirsthead
+      \endhead  % header material
+      \endfoot  % footer material
+
+\toprule
+                      & \multirow{2}{*}{}            & \multicolumn{4}{c}{Ansiedad} & \multirow{2}{*}{TCA} & \multirow{2}{*}{TAG} & \multirow{2}{*}{TPs} & \multirow{2}{*}{TLP} & \multirow{2}{*}{TEPT} \\ \cline{3-6}
+                      &                              & TGA  & TAS  & Fobias & TOC   &                      &                   &                   &                   &                   \\
+\midrule
+                      & \citetitle{jekyll88}	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Psychosis		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Adventures of Smart Patrol   &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Final Fantasy VII	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Juggernaut		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Sanitarium		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Planet Laika		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & American McGee's Alice	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Jekyll And Hyde		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Silent Hill 2		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Eternal Darkness	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & The Suffering		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Killer7			     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Crush			     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Manhunt2		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Haze			     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Batman: Arkham Asylum	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Dreamkiller		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Alice: Madness Returns	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & L.A. Noire	      	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & The Cat Lady	      	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Far Cry 3	      	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Actual Sunlight	             &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Depression Quest	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Outlast			     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Blackbay Asylum		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Ether One		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Evil Within		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Neverending Nightmares	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Batman: Arkham Knight	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Darkest Dungeon		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Fran Bow		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Pry			     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Rise of the Tomb Raider	     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Sym			     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Until Dawn		     &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Beginner's Guide             &      &      &        &       &                      &                   &                   &                   &                   \\
+\midrule                                                  
+\multirow{4}{*}{\rotatebox{90}{2010}} & Désiré       & -    &      &        &       &                      &                   &                   &                   &                   \\
+                      & Layers of Fear               & -    &      &        &       &                      &                   &                   &                   &                   \\
+                      & Tharsis                      &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & That Dragon, Cancer          &      &      &        &       &                      &                   &                   &                   &                   \\
+\midrule                                                  
+                      & The Town of Light            &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Doki Doki Literature Club    &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Fractured Minds              &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Hellblade: Senua's Sacrifice &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Last Day of June             &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Night in the Woods           &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Celeste                      &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Gris                         &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Heartbound                   &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Life is Strange              &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & The Red Strings Club         &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Sea of Solitude              &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & Tell Me Why                  &      &      &        &       &                      &                   &                   &                   &                   \\
+                      & EL MÍO                       &      &      &        &       &                      &                   &                   &                   &                   \\
+\bottomrule
+                    \end{longtable}
+\end{landscape}
+
+
+
+\chapter{Referencias Bibliográficas}
+\label{sec:bib}
+
+Objetivos generales y específicos del trabajo.
+
+\section{El archivo \emph{bibliografia.bib}}
+
+En este capítulo se pueden añadir secciones, pero no son obligatorias
+en capítulos cortos.
+
+\section{El uso de cite y el estilo apalike}
+
+El objetivo de este documento es proporcionar una plantilla de \LaTeX
+para TFG. No debe usarse como sustituto de la normativa de TFG
+aprobada por la ETSII.
+
+
+
+\chapter{Inserción de imágenes}
+
+
+
+
+\section{Primera sección}
+
+% Citar una referencia
+Esto es una referencia bibliográfica \citetitle{bibex}. Se recomienda
+leer ``The Not So Short Introduction to \LaTeX'' \cite{Oetiker2007}
+(existen versiones más modernas).
+
+
+\subsection{Ecuaciones y fórmulas}
+
+Gracias a la ecuación de Euler
+($e^{ \pm i\theta } = \cos \theta \pm i\sin \theta$) podemos ver la
+relación entre varias de las constantes matemáticas más importantes:
+\[
+    e^{i\pi} + 1 = 0.
+\]
+
+
+% Fórmula numerada
+Si una ecuación se va a referenciar es necesario numerarla:
+\begin{eqnarray}
+\label{eq:schemeP}
+ \Phi (k)=\dfrac{2}{|R(k)|(|R(k)|-1)} \underset{i,j \in R(k)}{\sum} a_{ij}.
+\end{eqnarray}
+Posteriormente se hace referencia a la ecuación a través de su
+etiqueta (label). Por ejemplo, la anterior ecuación
+\eqref{eq:schemeP}.
+
+
+\subsection{Tablas y figuras}
+
+% Insertar una tabla
+\begin{table}
+  \centering
+  \caption{Título de la tabla.}
+  \label{tab:una_tabla}
+
+\begin{footnotesize}
+%\renewcommand{\arraystretch}{1.5} % Para cambiar la separación entre filas (1 por defecto)
+\begin{tabular}{ccccccccccc}
+  \hline
+   & Subs. & Students & A & PE & WA & RE & CTE & IF & TLE & All\\
+  \hline
+Ex. 1 & 104 & 44 & 1.27    &   0       &   0.55    &   0.23    &   0.20    &   0.11    &   0     & 2.36  \\
+Ex. 2 & 118 & 37 & 0.92    &   0       &   0.92    &   0.27    &   0.49    &   0.59    &   0     & 3.19  \\
+Ex. 3 & 100 & 28 & 1.21    &   0.39    &   1.18    &   0.54    &   0.14    &   0.07    &   0.04  & 3.57  \\
+Ex. 4 & 78  & 25 & 1.08    &   0.84    &   0.52    &   0.40    &   0.24    &   0.04    &   0     & 3.12  \\
+Ex. 5 & 116 & 31 & 1.48    &   0.10    &   0.77    &   0.32    &   0.42    &   0.19    &   0.45  & 3.74  \\
+Ex. 6 & 213 & 32 & 1.06    &   0.34    &   3.81    &   0.56    &   0.69    &   0.06    &   0.13  & 6.66  \\
+Ex. 7 & 116 & 34 & 1.35    &   0.38    &   0.38    &   0.68    &   0.62    &   0       &   0     & 3.41  \\
+  \hline
+Average & 120.7 & 33 & 1.20 &  0.26 &  1.14 &  0.42 &  0.40 &  0.16 &  0.08 & 3.66 \\
+  \hline
+ \end{tabular}
+\end{footnotesize}
+
+\end{table}
+
+
+
+
+
+
+
+
+
+\begin{sidewaystable}
+  \centering
+  \caption{Tabla rotada. Factor groupings for the Mooshak questionnaire.}\label{tab:factor_analysis}
+
+\renewcommand{\arraystretch}{1.1}
+\begin{scriptsize}
+ \begin{tabular}{clcc}
+   \hline
+   Factor & \textbf{Interpretation} / Items$^{*}$ (loadings)  & Median & Mode \\
+   \hline
+   \hline
+    1 & \multicolumn{3}{l}{\textbf{Students' perception of Mooshak towards its helpfulness in learning} } \\
+   \hline
+    (21.17\%) & m10. Mooshak has forced me to implement programs more carefully $(0.849)$ & 4 & 4 \\
+    $\alpha$ = 0.922 & m6.  Mooshak has helped me improve as a programmer $(0.819)$ & 3 & 4 \\
+     & m5.  Mooshak has made me more aware of the need to write correct code $(0.781)$ & 3 & 3\\
+     & m1. Mooshak has forced me to program more responsibly $(0.713)$ & 3 & 3 \\
+     & m15. The specifications regarding the exercises used with Mooshak are adequate $(0.687)$ & 3 & 3 \\
+     & m18. Mooshak helps to measure my current programming skills $(0.680)$ & 2.5 & 3 \\
+   \hline
+%   \multicolumn{4}{c}{} \vspace{-0.2cm}\\
+%   \hline
+    2 & \multicolumn{3}{l}{\textbf{Disposition towards using Mooshak} } \\
+   \hline
+    (17.93\%) & m24. I would be willing to participate in a programming contest using Mooshak, with similar exercises to the ones & 2 & 1 \\
+    $\alpha$ = 0.897 & seen throughout the course $(0.807)$ & & \\
+    & m13. Using Moohak in the final exams is a good idea $(0.748)$ & 2 & 1 \\
+    & m14. I would like to use Mooshak or a similar tool in the future $(0.734)$ & 3 & 1 \\
+    & m17. Knowing Mooshak can motivate me to take part in a programming contest $(0.655)$ & 2 & 1\\
+    & m9. It would have been useful to use Mooshak from the first programming course $(0.527)$ & 2.5 & 1\\
+     & m16. Using Mooshak in the course has been interesting $(0.522)$ & 3 & 4 \\
+   \hline
+%   \multicolumn{4}{c}{} \vspace{-0.2cm}\\
+%   \hline
+    3 & \multicolumn{3}{l}{\textbf{Effect of Mooshak's feedback in the tool's usefulness} } \\
+   \hline
+    (14.84\%) & m12. Mooshak's feedback is adequate $(0.832)$ & 2 & 1\\
+    $\alpha$ = 0.836 & m3. Using Mooshak has increased my workload considerably $(0.693)$ & 4 & 4 \\
+     & m7.  If Mooshak does not accept my code I feel motivated to find and fix the errors $(0.691)$ & 2 & 3 \\
+     & m8.  In general, using Mooshak has been a good idea $(0.666)$ & 3 & 4 \\
+   \hline
+%   \multicolumn{4}{c}{} \vspace{-0.2cm}\\
+%   \hline
+    4 & \multicolumn{3}{l}{\textbf{Mooshak's effect on persistence} } \\
+   \hline
+    (11.20\%) & m23. When Mooshak does not accept my code I get discouraged and I abandon the exercise $(0.848)$ & 3 & 3 \\
+    $\alpha$ = 0.705 & m22. Mooshak has been a waste of time $(0.597)$ & 2 & 2 \\
+    & m25. Once a program has passed Mooshak's tests, I rewrite it in order to enhance it $(0.559)$ & 2 & 2 \\
+   \hline
+%   \multicolumn{4}{c}{} \vspace{-0.2cm}\\
+%   \hline
+   5 & \multicolumn{3}{l}{\textbf{Students' perception of Mooshak's features} } \\
+   \hline
+    (10.87\%) & m20. Even if it is not related to the grade, I feel satisfied if I am one of the first students to complete an exercise $(0.729)$ & 2 & 2\\
+   $\alpha$ = 0.742  & m19. I value the fact that a tool like Mooshak returns feedback in real time about the correction of my programs $(0.650)$ & 3.5 & 4 \\
+   \hline
+%   \multicolumn{4}{c}{} \vspace{-0.2cm}\\
+%   \hline
+\multicolumn{4}{l}{\scriptsize $^{*}$Measured on a 5-point Likert scale (1: strongly disagree; 2: disagree; 3: neutral; 4: agree; 5: strongly agree).}
+  \end{tabular}
+\end{scriptsize}
+\end{sidewaystable}
+
+
+
+\begin{table}
+  \centering
+
+\begin{small}
+\begin{tabular}{|l|l|l|l|}\hline
+  \multirow{10}{*}{numeric literals} & \multirow{5}{*}{integers} & in decimal & \verb|8743| \\ \cline{3-4}
+  & & \multirow{2}{*}{in octal} & \verb|0o7464| \\ \cline{4-4}
+  & & & \verb|0O103| \\ \cline{3-4}
+  & & \multirow{2}{*}{in hexadecimal} & \verb|0x5A0FF| \\ \cline{4-4}
+  & & & \verb|0xE0F2| \\ \cline{2-4}
+  & \multirow{5}{*}{fractionals} & \multirow{5}{*}{in decimal} & \verb|140.58| \\ \cline{4-4}
+  & & & \verb|8.04e7| \\ \cline{4-4}
+  & & & \verb|0.347E+12| \\ \cline{4-4}
+  & & & \verb|5.47E-12| \\ \cline{4-4}
+  & & & \verb|47e22| \\ \cline{1-4}
+  \multicolumn{3}{|l|}{\multirow{3}{*}{char literals}} & \verb|'H'| \\ \cline{4-4}
+  \multicolumn{3}{|l|}{} & \verb|'\n'| \\ \cline{4-4}          %% here
+  \multicolumn{3}{|l|}{} & \verb|'\x65'| \\ \cline{1-4}        %% here
+  \multicolumn{3}{|l|}{\multirow{2}{*}{string literals}} & \verb|"bom dia"| \\ \cline{4-4}
+  \multicolumn{3}{|l|}{} & \verb|"ouro preto\nmg"| \\ \cline{1-4}          %% here
+\end{tabular}
+\end{small}
+
+  \caption{Tabla con ``multicolumnas'' y ``multifilas''.}\label{tab:tablacompleja}
+\end{table}
+
+
+
+
+
+% Insertar una figura
+\begin{figure}
+  \centering
+  \includegraphics[width=0.75\textwidth,clip=true]{urjc/urjc-logo}
+  \caption{Logo de la Universidad.}
+  \label{fig:logo_universidad}
+\end{figure}
+
+% Referenciar una etiqueta (label)
+Las tablas y figuras deben presentarse en el texto, referenciadas y
+numeradas. La descripción de una figura debe ir posicionada debajo de
+la misma. Las descripciones de tablas pueden aparecer encima o debajo
+de las mismas (pero de forma consistente en todo el documento).
+
+En las tablas se recomienda evitar líneas verticales y usar pocas horizontales. 
+
+La figura~\ref{fig:logo_universidad} se utiliza en la portada. \LaTeX
+ubica automáticamente las tablas y figuras. Para ello emplea reglas
+basadas en la experiencia de profesionales de la edición de
+textos. Podemos forzar su ubicación, pero en general es recomendable
+usar la ubicación sugerida por el sistema \LaTeX. Usad gráficos
+vectoriales siempre que podáis.
+
+
+
+
+\section{Segunda sección}
+
+% Nueva página
+Normalmente no tendremos que insertar saltos de página, salvo para forzar que los capítulos empiecen en páginas impares, con \begin{verbatim}\blankpage\end{verbatim} En cualquier caso, podemos introducir un salto de página con el comando \begin{verbatim}\newpage\end{verbatim}.
+
+\newpage
+% También con \pagebreak
+
+
+
+\subsection{Código}
+
+\begin{lstlisting}
+/* The code below will print the words Hello World
+to the screen, and it is amazing */
+Console.WriteLine("Hello World!"); 
+/* def sum_list_limits_1(a, lower, upper): */
+    if lower > upper:  % comment in Prolog
+        return 0  # comment in Python 
+    else:  // inline comment
+        return a[upper] $+ \cup$ sum_list_limits_1(a, lower, upper - 1)
+\end{lstlisting}
+
+% \begin{mypython}[float={!t},caption={Titulo del algoritmo/código.},label={alg:etiqueta}]
+% def sum_list_limits_1(a, lower, upper):
+%     if lower > upper:
+%         return 0
+%     else:
+%         return a[upper] + sum_list_limits_1(a, lower, upper - 1)
+% \end{mypython}
+% El código~\ref{alg:etiqueta} es un ejemplo en Python.
+
+
+
+\begin{algorithm}[t]
+  \caption{\textit{Additional Louvain} \textbf{input}=$\left(A, \ \mathcal{M}\right)$ \textbf{output}=$P$}
+  \begin{algorithmic}[1]
+    \STATE $\forall i \in V$, \ let $i$ be an isolated community
+    \STATE $o=permutation(V)$
+    \FOR{$k \ \in \ o$}
+    \STATE search in $A$ all the neighbours of $k$, $j$
+    \STATE $\forall j$, calculate $\Delta Q_k(j)$ in matrix $\mathcal{M}$
+    \STATE $j^*=\{ \ j \ | \ \Delta Q_k(j^*)=\max_j\{Q_k(j)\} \ \}$
+    \IF{$\Delta Q_k(j^*)>0$}
+    \STATE{Move node $k$ to $j^*$ 's community}
+    \ELSE
+    \STATE{$k$ remains in its community}
+    \ENDIF
+    \ENDFOR
+  \end{algorithmic}
+  \label{alg:AdditionalLouvain}
+\end{algorithm}
+
+
+En el algoritmo~\ref{alg:AdditionalLouvain} aparece un ejemplo en
+pseudocódigo.  También se puede poner \code{x=1} inter-lineado.
+
+
+\chapter{Resultados (opcional)}
+\label{sec:resulObtenidos}
+
+
+En esta sección se describe los resultados obtenidos en el TFG, en
+caso de realizar propuestas para su resolución. Puede sustituirse por
+ejemplos u omitirse.
+
+
+\chapter{Conclusiones y trabajos futuros}
+
+En este capítulo se detallan las conclusiones derivadas del TFG y la
+propuesta de posibles trabajos futuros.
+
+Las citas del texto Autor \cite{giaquinta}, Autor \cite{fortune},
+Autor \cite{fortuneB}, Autor \cite{mitchell} y Autor \cite{morrey}
+deben ir referenciadas en la bibliografia.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bibliografía 
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliografía}
+
+\printbibliography
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Apéndices
+\cleardoublepage
+\appendix
+
+\chapter{Apéndice}
+
+
+\section{Código del archivo \emph{bibliografia.bib}}
+\label{app:bib}
+
+\lstinputlisting{bibliografia.bib}
+
+
+
+
+\end{document}

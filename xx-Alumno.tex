@@ -1,0 +1,87 @@
+\documentclass[oneside]{tfg-urjc}
+
+
+\newcommand{\grado}{Grado en XXX}
+\newcommand{\titulotrabajo}{Título del\\ Trabajo de\\ Fin de Grado}
+\newcommand{\tipotrabajo}{Trabajo Fin de Grado}
+\newcommand{\curso}{Curso 20XX-20XX}
+\newcommand{\autor}{Alumno Apellidos}
+\newcommand{\tutor}{Tutor Apellidos}
+\newcommand{\cotutor}{} %% Completar si procede
+
+\bibliography{bibliografia}
+
+\sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Inicio del documento
+\begin{document}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% FrontMatter
+\cleardoublepage
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\chapter*{Resumen}
+\addcontentsline{toc}{chapter}{Resumen}
+
+Resumen del TFG
+
+
+\chapter*{Agradecimientos}
+\addcontentsline{toc}{chapter}{Agradecimientos}
+
+Breves agradecimientos o dedicatoria.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Índices
+{
+  \setlength{\parskip}{1pt}
+
+  % Índice de contenidos
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\contentsname}
+  \tableofcontents
+
+  % Índice de tablas (OPCIONAL)
+  % \cleardoublepage
+  % \phantomsection
+  % \addcontentsline{toc}{chapter}{\noindent \listtablename}
+  % \listoftables
+
+  % Índice de figuras (OPCIONAL)
+  % \cleardoublepage
+  % \phantomsection
+  % \addcontentsline{toc}{chapter}{\listfigurename}
+  % \listoffigures
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MainMatter
+\cleardoublepage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{Introducción}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bibliografía 
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliografía}
+\printbibliography
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Apéndices
+\cleardoublepage
+\appendix
+
+\chapter{Apéndice}
+
+
+\end{document}
