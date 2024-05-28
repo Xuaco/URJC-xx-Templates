@@ -137,7 +137,7 @@
 
   \begin{center}
     \vspace*{-4em}
-    \includegraphics[scale=.9]{urjc/urjc-logo}\\
+    \includegraphics[scale=.9]{urjc-logo}\\
     \vspace*{2em}
     \textsc{\LARGE Escuela Técnica Superior\\de Ingeniería Informática}\\
     \vspace*{2em}

@@ -23,7 +23,7 @@ otros editores.
 
 # Estructura del repositorio
 
-En el repositorio hay cuatro carpetas:
+En el repositorio hay tres carpetas:
 
 - TFG: contiene el template para hacer TFG's en los grados de la ETSII
 de la URJC.
@@ -34,9 +34,10 @@ de la URJC.
 - Talk: contiene templates para realizar presentaciones (el nombre del
   archivo indica el contexto de la charla).
 
-- Manual: contiene un manual a modo de ejemplo para la creación de
-  figuras, tablas, etc. en las distintas plantillas (este documento
-  estará siempre en modo borrador o work-in-progress).
+y la carpeta raiz contiene un manual a modo de ejemplo (usando el
+  template de TFGs) para la creación de figuras, tablas, etc. en las
+  distintas plantillas (este documento estará siempre en modo borrador
+  o work-in-progress).
 
 # Copyright y lincencia
 

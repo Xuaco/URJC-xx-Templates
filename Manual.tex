@@ -1,4 +1,4 @@
-\documentclass[twoside]{tfg-urjc}
+\documentclass[twoside]{urjc-tfg}
 
 
 \newcommand{\grado}{Grados en Ciber, IA, II, IC, etc}
@@ -29,29 +29,30 @@
 
 
 Este documento tiene como objetivo servir de plantilla y manual de uso
-para la redacción de trabajos fin de Grado (TFG) y/o Master (TFM) de
+para la redacción de trabajos fin de Grado (TFG) y/o Máster (TFM) de
 la Universidad Rey Juan Carlos de Madrid.
 
-La plantilla está compuesta por cuatro archivos:
+El manual está compuesta por cuatro archivos:
 \begin{itemize}
-\item \url{tfg-urjc.cls}: plantilla que define la clase a importar por
+\item \url{Manual.tex}: contiene el código \LaTeX que genera este
+  documento y que tiene como finalidad ayudar al alumno a resolver
+  algunas dudas iniciales en el uso de \LaTeX.
+
+\item \url{urjc-tfg.cls}: plantilla que define la clase a importar por
   en el documento del TFG/TFM.
-\item \url{xx-Alumno.tex}: archivo con código \LaTeX que servirá de
-  base para crear el documento del TFG/TFM.
+
+\item \url{urjc-logo.jpg}: archivo con el logotipo de la
+  Universidad Rey Juan Carlos. Se usa en la portada de la plantilla y
+  como ejemplo para explicar al inserción de imágenes en el
+  Capítulo~\ref{sec:image}.
+
 \item \url{bibliografia.bib}:\footnote{Por conveniencia el código de
     \code|bibliografia.bib| está disponible en Apéndice~\ref{app:bib}}
   archivo con las referencias bibliográficas que se usan en este
   manual. Están codificadas usando BibTeX, su uso se explica en el
   Capítulo~\ref{sec:bib}.
-\item \url{urjc/urjc-logo.jpg}: archivo con el logotipo de la
-  Universidad Rey Juan Carlos. Se usa en la portada de la plantilla y
-  como ejemplo para explicar al inserción de imágenes en el
-  Capítulo~\ref{sec:image}.
 \end{itemize}
 
-El archivo \url{Manual.tex} contiene el código \LaTeX que genera este
-documento y que tiene como finalidad ayudar al alumno a resolver
-algunas dudas iniciales en el uso de \LaTeX.
 
 
 % \chapter*{Agradecimientos}
@@ -108,10 +109,10 @@ expresiones matemáticas.\footnote{Para más información visitar
   \url{https://manualdelatex.com/tutoriales/ecuaciones}.}
 
 En relación al objetivo principal de esta plantilla, la realización de
-la memoria de un Trabajo Fin de Grado y/o Master en la Universidad Rey
+la memoria de un Trabajo Fin de Grado y/o Máster en la Universidad Rey
 Juan Carlos, recomiendo consultar la normativa vigente en cada momento
 y prestando especial atención a las características especiales del
-grado y/o master concreto:
+grado y/o máster concreto:
 
 \begin{itemize}
 \item Para TFG consultar
@@ -507,7 +508,7 @@ Average & 120.7 & 33 & 1.20 &  0.26 &  1.14 &  0.42 &  0.40 &  0.16 &  0.08 & 3.
 % Insertar una figura
 \begin{figure}
   \centering
-  \includegraphics[width=0.75\textwidth,clip=true]{urjc/urjc-logo}
+  \includegraphics[width=0.75\textwidth,clip=true]{urjc-logo}
   \caption{Logo de la Universidad.}
   \label{fig:logo_universidad}
 \end{figure}
