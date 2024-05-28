@@ -1,0 +1,56 @@
+# Markdown syntax guide# URJC-xx-Templates
+
+El objetivo de las plantillas LaTeX que comparto en este repositorio
+es facilitar a los estudiantes la escritura de la memoria y
+presentacion de los trabajos fin de grado (TFG) o máster (TFM) pero
+estas podrían no cumplir con las restricciones de formato de la URJC
+(o la UNIR) por lo tanto es responsabilidad del alumno checkear que
+el documento final cumple con las restricciones de formato...
+
+Este es un repositorio __personal__ y los templates que comparto son de
+mi creación, i.e., estos templates NO son templates oficiales de la
+URJC o la UNIR.
+
+# Usabilidad de los templates
+
+Son templates sencillos que no requieren usar compiladores especiales
+ni la instalación de paquetes en python o similar.
+
+Son compatibles con Overleaf pero recomiendo trabajar con editores en
+local. Entre todos los editores disponibles recomiendo el uso de Emacs
+--entre sus muchas ventajas destaco que consume menos bateria que
+otros editores.
+
+# Estructura del repositorio
+
+En el repositorio hay cuatro carpetas:
+
+- TFG: contiene el template para hacer TFG's en los grados de la ETSII
+de la URJC.
+
+- TFM-Unir: contiene el template para hacer TFM's en el máster
+  conjunto de la URJC-UNIR-UAH.
+
+- Talk: contiene templates para realizar presentaciones (el nombre del
+  archivo indica el contexto de la charla).
+
+- Manual: contiene un manual a modo de ejemplo para la creación de
+  figuras, tablas, etc. en las distintas plantillas (este documento
+  estará siempre en modo borrador o work-in-progress).
+
+# Copyright y lincencia
+
+Todos los documentos de este repositorio cumplen:
+
+```
+    Author:        Joaquín Arias
+    E-mail:        joaquin.arias@urjc.es
+    WWW:           http://www.ia.urjc.es/GIA/joaquin-arias/
+    Copyright (c)  2024, Joaquín Arias
+                         Universidad Rey Juan Carlos
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted under license CC BY-SA 4.0, Creative
+    Commons Attribution-ShareAlike 4.0 International.
+``` 
